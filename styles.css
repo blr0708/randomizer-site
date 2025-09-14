@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column; /* колонка сверху вниз. */
+  height: 100vh;
+}
+
+/* Верхнее меню */
+header {
+  background: #333;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between; /* заголовок слева, меню справа */
+  align-items: center;           /* выравнивание по центру */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+.menu a {
+  color: white;
+  text-decoration: none; /* убрать подчеркивание */
+  margin-left: 15px;     /* расстояние между кнопками */
+  font-size: 16px;
+}
+
+.menu a:hover {
+  text-decoration: underline; /* подсветка при наведении */
+}
+main {
+  flex: 1;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}
+/* Левая и правая колонка */
+aside {
+  width: 15%;
+  background: #f0f0f0;
+  padding: 10px;
+  height: 100vh;     /* колонка во весь экран */
+  overflow-y: auto;  /* только колонка скроллится */
+}
+.ad {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+
+}
+
+.ad img {
+  max-width: 100%;    /* чтобы не вылезала за блок */
+  height: auto;       /* сохраняем пропорции */
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ad img:hover {
+  transform: scale(1.02); /* сдвигается вверх */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3); /* появляется тень */
+}
+
+.content {
+  flex: 1; /* займёт всё оставшееся место */
+  padding: 10px;
+  background: #fff;
+}
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
