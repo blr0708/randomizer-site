@@ -6,29 +6,54 @@ body {
   height: 100vh;
 }
 
-/* Верхнее меню */
+/* Шапка */
 header {
-  background: #333;
+  background: linear-gradient(90deg, #2193b0, #6dd5ed); /* более нежный градиент */
   color: white;
-  padding: 25px 20px;
+  padding: 12px 40px;
   display: flex;
-  justify-content: space-between; /* заголовок слева, меню справа */
-  align-items: center;           /* выравнивание по центру */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Заголовок Randomizer */
 header h1 {
   margin: 0;
-  font-size: 20px;
-}
-.menu a {
-  color: white;
-  text-decoration: none; /* убрать подчеркивание */
-  margin-left: 15px;     /* расстояние между кнопками */
-  font-size: 16px;
+  font-size: 28px;                /* чуть меньше */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
-.menu a:hover {
-  text-decoration: underline; /* подсветка при наведении */
+/* Кнопки меню и язык */
+.menu a,
+.lang-btn {
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  
+  /* контрастные кнопки */
+  background: white;
+  color: #2193b0;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+/* hover эффект */
+.menu a:hover,
+.lang-btn:hover {
+  background: #2193b0;
+  color: white;
+  transform: translateY(-2px);
 }
 main {
   flex: 1;
@@ -39,10 +64,28 @@ main {
 /* Левая и правая колонка */
 aside {
   width: 15%;
-  background: #f0f0f0;
-  padding: 10px;
+background: linear-gradient(180deg, #e0f7ff, #b3ecff); /* нежно-голубой */  padding: 10px;
   height: 100vh;     /* колонка во весь экран */
   overflow-y: auto;  /* только колонка скроллится */
+  overflow: hidden;     /* скрываем выходящий контент */
+  position: sticky;
+  top: 0;
+}
+/* внутренний контейнер со всеми баннерами */
+.ad-container {
+  display: flex;
+  flex-direction: column;
+  animation: scrollAds 30s linear infinite;
+}
+
+/* анимация прокрутки */
+@keyframes scrollAds {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%); /* регулируй в зависимости от высоты */
+  }
 }
 .ad {
   margin: 10px 0;
@@ -69,8 +112,20 @@ aside {
   background: #fff;
 }
 footer {
-  background: #333;
+  background: linear-gradient(90deg, #2193b0, #6dd5ed); /* более нежный градиент */
   color: white;
   text-align: center;
   padding: 10px;
 }
+.lang-btn {
+  background: none;
+  border: none;
+  margin-left: 15px;     /* расстояние между кнопками */
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+.lang-btn:hover {
+  transform: scale(1.2);
+}
+
